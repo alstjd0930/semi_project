@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import semi.project.model.UserDao;
-import semi.project.model.UserDto;
+
 
 /**
  * Servlet implementation class ResutlController
@@ -30,9 +29,7 @@ public class ResutlController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		UserDao dao =new UserDao();
-		List<UserDto> result = dao.selectList();
-		request.setAttribute("list", result);
+		
 		request.getRequestDispatcher("/WEB-INF/view/user/result.jsp").forward(request, response);
 	
 	}
