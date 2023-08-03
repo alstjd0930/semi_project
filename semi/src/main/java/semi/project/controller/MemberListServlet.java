@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import semi.project.DAO.MemberDao;
+import semi.project.DTO.MemberDto;
+
 @WebServlet("/member/list")
 public class MemberListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,8 +22,11 @@ public class MemberListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("/WEB-INF/view/user/result.jsp").forward(request, response);
-	
+		MemberDao dao = new MemberDao();
+		List<MemberDto> result = dao.MemberList();
+		request.setAttribute("list", result);
+		
+		request.getRequestDispatcher("/WEB-INF/view/member/list.jsp").forward(request, response);
 	}
 
 

@@ -7,22 +7,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/login/modify")
-public class JoinModifyServlet extends HttpServlet {
+@WebServlet("/member/modify")
+public class ModifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
-    public JoinModifyServlet() {
+    public ModifyServlet() {
         super();
     }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("/WEB-INF/view/member/modify.jsp").forward(request, response);
 	}
 
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		doGet(request, response);
+//	}
 
 }

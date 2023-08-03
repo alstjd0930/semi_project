@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 정보 수정</title>
+<title>홈쇼핑 회원 등록</title>
 </head>
 <body>
-<h2>회원 정보 수정</h2>
+<h2>홈쇼핑 회원 등록</h2>
 	<form action="<%=request.getContextPath() %>/member/list">
 	<table border="1">
 		<tr>
@@ -39,8 +39,7 @@
 			<td><input type="text" name=""> </td>
 		</tr>
 		<tr>
-			<td><input type="submit" value="수정"><input type="submit" value="조회"></td>
-			
+			<td><input type="submit" name=""><input type="submit" name=""></td>
 		</tr>
 	
 	</table>
