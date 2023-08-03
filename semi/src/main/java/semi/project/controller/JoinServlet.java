@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+public class JoinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-    public LoginServlet() {
+    public JoinServlet() {
         super();
     }
 
