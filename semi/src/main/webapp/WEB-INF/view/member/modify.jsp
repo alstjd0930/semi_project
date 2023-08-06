@@ -39,8 +39,7 @@
 			<td><input type="text" name=""> </td>
 		</tr>
 		<tr>
-			<td><input type="submit" value="수정"><input type="submit" value="조회"></td>
-			
+			<td colspan="2"><center><input type="button" value="수정" ><input type="submit" value="조회"></center></td>
 		</tr>
 	
 	</table>

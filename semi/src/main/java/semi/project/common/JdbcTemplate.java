@@ -16,25 +16,23 @@ public class JdbcTemplate {
 	
 	// Singleton패턴  Connection 객체가 많이 생성됨을 방지
 	public static Connection getConnection() {
-		Properties prop = new Properties();
-		String currentPath = JdbcTemplate.class.getResource("./").getPath();
-		System.out.println("currentPath: "+currentPath);
+		//Properties prop = new Properties();
+		//String currentPath = JdbcTemplate.class.getResource("./").getPath();
+		//System.out.println("currentPath: "+currentPath);
 //		currentPath: /C:/workspace/java/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/20230721_jdbc_kh/WEB-INF/classes/kh/test/jdbckh/common/jdbc/
 		try {
 			// driver.properties 파일 로딩함.
-			prop.load(new BufferedReader(new FileReader(currentPath+"driver.properties")));
+			//prop.load(new BufferedReader(new FileReader(currentPath+"driver.properties")));
 			
 			// 1. driver 있다면 로딩함. // 없다면 ClassNotFoundException 오류 발생
-			Class.forName(prop.getProperty("jdbc.driver"));
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 			// 2. Connection 객체 생성 // dbms와 연결
-			conn = DriverManager.getConnection(prop.getProperty("lurl"),prop.getProperty("username"),prop.getProperty("password"));
+			conn = DriverManager.getConnection(
+					"jdbc:oracle:thin:@127.0.0.1:1521:XE",
+					"KM", "KM");		
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		if(conn!=null) {
@@ -42,6 +40,8 @@ public class JdbcTemplate {
 		}else {
 			System.out.println("!!!!!!!!!!!DB 연결 실패!!!!!!!!!!!!!!!!!");
 		}
+		
+		
 		return conn;
 	}
 	public static Connection getConnectionKhl() {

@@ -39,7 +39,6 @@ public class MemberDao {
 				dto.setCustname(rs.getNString("custname"));
 				dto.setPhone(rs.getString("phone"));
 				dto.setAddress(rs.getNString("address"));
-				dto.setJoindate(rs.getDate("joindate"));
 				dto.setGrade(rs.getString("grade"));
 				dto.setCity(rs.getString("city"));
 				result.add(dto);
@@ -53,6 +52,34 @@ public class MemberDao {
 		}
 		
 		//System.out.println(result);
+		return result;
+	}
+//	CUSTNO   NOT NULL NUMBER(6)    
+//	CUSTNAME          VARCHAR2(20) 
+//	PHONE             VARCHAR2(13) 
+//	ADDRESS           VARCHAR2(60) 
+//	JOINDATE          DATE         
+//	GRADE             CHAR(1)      da
+//	CITY              CHAR(2)   
+	public int insertMember(Connection conn, MemberDto dto) {
+		int result = 0;
+		String query = "insert into member_tbl_02 "
+				+ "(CUSTNAME,PHONE,ADDRESS,GRADE,CITY)"
+				+ "values(?,?,?,?,?)";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, dto.getCustname());
+			pstmt.setString(2, dto.getPhone());
+			pstmt.setString(3, dto.getAddress());
+			pstmt.setString(4, dto.getGrade());
+			pstmt.setString(5, dto.getCity());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		System.out.println(result);
 		return result;
 	}
 }

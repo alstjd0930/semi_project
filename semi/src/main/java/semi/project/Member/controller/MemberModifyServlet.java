@@ -1,4 +1,4 @@
-package semi.project.controller;
+package semi.project.Member.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/member/modify")
-public class ModifyServlet extends HttpServlet {
+public class MemberModifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
-    public ModifyServlet() {
+    public MemberModifyServlet() {
         super();
     }
 

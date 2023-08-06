@@ -10,6 +10,7 @@
 <title>회원 등록</title>
 </head>
 <body>
+	<h2>메인</h2>
 
 	
 </body>

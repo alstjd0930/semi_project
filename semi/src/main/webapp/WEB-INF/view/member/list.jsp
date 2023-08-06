@@ -9,9 +9,7 @@
 <title>회원 목록 조회</title>
 </head>
 <body>
-<%
-	List<MemberDto> volist = (List<MemberDto>)request.getAttribute("list");
-%>
+
 <h2>회원 목록 조회</h2>
 
 	<table border="1">
@@ -20,25 +18,27 @@
 			<th>회원성명</th>
 			<th>전화번호</th>
 			<th>주소</th>
-			<th>가입일자</th>
 			<th>고객등급</th>
 			<th>거주지역</th>
 		</tr>
 		<%
+	
+		List<MemberDto> volist = (List<MemberDto>)request.getAttribute("list");
+		if(volist !=null && volist.size()>0){
 		for(int i=0; i<volist.size();i++){
 			MemberDto vo = volist.get(i);
 		
 		%>
 		<tr>
-			<td><a href="<%=request.getContextPath() %>/member/modify"> <%=vo.getCustno() %></a></td>
-			<td><%=vo.getCustname() %></td>
-			<td><%=vo.getPhone() %></td>
-			<td><%=vo.getAddress() %></td>
-			<td><%=vo.getJoindate() %></td>
-			<td><%=vo.getGrade() %></td>
-			<td><%=vo.getCity() %></td>
+			<td><a href="<%=request.getContextPath() %>/member/modify"> <%=volist.get(i).getCustno()%></a></td>
+			<td><%=volist.get(i).getCustname()%></td>
+			<td><%=volist.get(i).getPhone() %></td>
+			<td><%=volist.get(i).getAddress() %></td>
+			<td><%=volist.get(i).getGrade() %></td>
+			<td><%=volist.get(i).getCity() %></td>
 		</tr>
 		<%
+		}
 		}
 		%>
 	</table>

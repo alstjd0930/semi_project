@@ -14,25 +14,29 @@ public class MemberDto {
 	private String custname;
 	private String phone;
 	private String address;
-	private Date joindate;
 	private String grade;
 	private String city;
-	public MemberDto() {
-	}
-	public MemberDto(int custno, String custname, String phone, String address, Date joindate, String grade,
-			String city) {
+	public MemberDto(int custno, String custname, String phone, String address, String grade, String city) {
 		this.custno = custno;
 		this.custname = custname;
 		this.phone = phone;
 		this.address = address;
-		this.joindate = joindate;
 		this.grade = grade;
 		this.city = city;
+	}
+	public MemberDto(String custname, String phone, String address, String grade, String city) {
+		this.custname = custname;
+		this.phone = phone;
+		this.address = address;
+		this.grade = grade;
+		this.city = city;
+	}
+	public MemberDto() {
 	}
 	@Override
 	public String toString() {
 		return "MemberDto [custno=" + custno + ", custname=" + custname + ", phone=" + phone + ", address=" + address
-				+ ", joindate=" + joindate + ", grade=" + grade + ", city=" + city + "]";
+				+ ", grade=" + grade + ", city=" + city + "]";
 	}
 	public int getCustno() {
 		return custno;
@@ -58,12 +62,6 @@ public class MemberDto {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Date getJoindate() {
-		return joindate;
-	}
-	public void setJoindate(Date joindate) {
-		this.joindate = joindate;
-	}
 	public String getGrade() {
 		return grade;
 	}
@@ -76,7 +74,6 @@ public class MemberDto {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	
 	
 	
 }
