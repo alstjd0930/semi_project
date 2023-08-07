@@ -7,18 +7,19 @@
 <title>홈쇼핑 회원 등록</title>
 </head>
 <body>
+<%@ include file="header.jsp"%>
 <h2>홈쇼핑 회원 등록</h2>
 	<!-- private int custno;
+	private String custname;
 	private String phone;
 	private String address;
-	private Date joindate;
 	private String grade;
 	private String city; -->
 	<form action="<%=request.getContextPath() %>/member/insert" method="post">
 	<table border="1">
 		<tr>
 			<td>회원번호</td>
-			<td><input type="custno"> </td>
+			<td><input type="custno" readonly="readonly"> </td>
 		</tr>
 		<tr>
 			<td>회원성명</td>
@@ -41,7 +42,7 @@
 			<td><input type="text" name="city"> </td>
 		</tr>
 		<tr>
-			<td colspan="2"><center><input type="submit" value="등록" ><input type="submit" value="조회"></center></td>
+			<td colspan="2"><center><input type="button" value="등록" ><input type="submit" value="조회"></center></td>
 		</tr>
 	
 	</table>

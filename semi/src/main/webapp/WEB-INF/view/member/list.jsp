@@ -9,7 +9,7 @@
 <title>회원 목록 조회</title>
 </head>
 <body>
-
+<%@ include file="header.jsp"%>
 <h2>회원 목록 조회</h2>
 
 	<table border="1">

@@ -7,6 +7,7 @@
 <title>회원 정보 수정</title>
 </head>
 <body>
+<%@ include file="header.jsp"%>
 <h2>회원 정보 수정</h2>
 	<form action="<%=request.getContextPath() %>/member/list">
 	<table border="1">

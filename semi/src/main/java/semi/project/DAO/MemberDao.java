@@ -61,24 +61,48 @@ public class MemberDao {
 //	JOINDATE          DATE         
 //	GRADE             CHAR(1)      da
 //	CITY              CHAR(2)   
-	public int insertMember(Connection conn, MemberDto dto) {
+//	public int insertMember(Connection conn, MemberDto dto) {
+//		int result = 0;
+//		String query = "insert into member_tbl_02 "
+//				+ "(CUSTNAME,PHONE,ADDRESS,GRADE,CITY)"
+//				+ "values(?,?,?,?,?)";
+//		PreparedStatement pstmt = null;
+//		try {
+//			pstmt = conn.prepareStatement(query);
+//			pstmt.setString(1, dto.getCustname());
+//			pstmt.setString(2, dto.getPhone());
+//			pstmt.setString(3, dto.getAddress());
+//			pstmt.setString(4, dto.getGrade());
+//			pstmt.setString(5, dto.getCity());
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			close(pstmt);
+//		}
+//		System.out.println(result);
+//		return result;
+//	}
+	public int insert(Connection conn, MemberDto dto){
 		int result = 0;
-		String query = "insert into member_tbl_02 "
-				+ "(CUSTNAME,PHONE,ADDRESS,GRADE,CITY)"
-				+ "values(?,?,?,?,?)";
-		PreparedStatement pstmt = null;
+		String query = "INSERT INTO member_tbl_02 VALUES(?,?,?,?,?,?)";
+		PreparedStatement pstmt =null;
 		try {
 			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, dto.getCustname());
-			pstmt.setString(2, dto.getPhone());
-			pstmt.setString(3, dto.getAddress());
-			pstmt.setString(4, dto.getGrade());
-			pstmt.setString(5, dto.getCity());
+			pstmt.setInt(1, dto.getCustno());
+			pstmt.setString(2, dto.getCustname());
+			pstmt.setString(3, dto.getPhone());
+			pstmt.setString(4, dto.getAddress());
+			pstmt.setString(5, dto.getGrade());
+			pstmt.setString(6, dto.getCity());
+			result =pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			close(pstmt);
+			close(conn);
 		}
+		
+		
 		System.out.println(result);
 		return result;
 	}

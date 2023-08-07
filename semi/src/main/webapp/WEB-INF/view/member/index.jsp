@@ -10,6 +10,7 @@
 <title>회원 등록</title>
 </head>
 <body>
+<%@ include file="header.jsp"%>
 	<h2>메인</h2>
 
 	
