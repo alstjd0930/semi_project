@@ -8,6 +8,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<section>
 <h2>회원 정보 수정</h2>
 	<form action="<%=request.getContextPath() %>/member/list">
 	<table border="1">
@@ -45,5 +46,7 @@
 	
 	</table>
 	</form>
+	</section>
+	<%@ include file="footer.jsp"%>
 </body>
 </html>

@@ -13,6 +13,33 @@ import static semi.project.common.JdbcTemplate.*;
 import semi.project.DTO.MemberDto;
 
 public class MemberDao {
+	public int insert(Connection conn, MemberDto dto){
+		int result = 0;
+		String query = "INSERT INTO member_tbl_02 VALUES(member_seq.nextval,?,?,?,?,?)";
+		PreparedStatement pstmt =null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			//pstmt.setInt(1, dto.getCustno());
+			pstmt.setString(1, dto.getCustname());
+			pstmt.setString(2, dto.getPhone());
+			pstmt.setString(3, dto.getAddress());
+			pstmt.setString(4, dto.getGrade());
+			pstmt.setString(5, dto.getCity());
+			result =pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			close(conn);
+		}
+		
+		
+		System.out.println(result);
+		return result;
+	}
+	
+	
+	
 	public List<MemberDto> MemberList(){
 		List<MemberDto> result = null;
 		String query = "SELECT * FROM member_tbl_02";
@@ -83,30 +110,7 @@ public class MemberDao {
 //		System.out.println(result);
 //		return result;
 //	}
-	public int insert(Connection conn, MemberDto dto){
-		int result = 0;
-		String query = "INSERT INTO member_tbl_02 VALUES(member_seq.nextval,?,?,?,?,?)";
-		PreparedStatement pstmt =null;
-		try {
-			pstmt = conn.prepareStatement(query);
-			//pstmt.setInt(1, dto.getCustno());
-			pstmt.setString(1, dto.getCustname());
-			pstmt.setString(2, dto.getPhone());
-			pstmt.setString(3, dto.getAddress());
-			pstmt.setString(4, dto.getGrade());
-			pstmt.setString(5, dto.getCity());
-			result =pstmt.executeUpdate();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			close(pstmt);
-			close(conn);
-		}
-		
-		
-		System.out.println(result);
-		return result;
-	}
+
 	public List<MemberDto> MoneyList(){
 		List<MemberDto> result = null;
 //		String query = "select a.custno, a.custname, a.grade, sum(b.price) total"

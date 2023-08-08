@@ -8,6 +8,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<section>
 <h2>홈쇼핑 회원 등록</h2>
 	<!-- private int custno;
 	private String custname;
@@ -47,5 +48,7 @@
 	
 	</table>
 	</form>
+	</section>
+<%@ include file="footer.jsp"%>
 </body>
 </html>

@@ -11,6 +11,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<section>
 	<h2>회원매출조회</h2>
 	
 	<table border="1">
@@ -40,7 +41,7 @@
 		%>
 
 	</table>
-	
-
+	</section>
+<%@ include file="footer.jsp"%>
 </body>
 </html>

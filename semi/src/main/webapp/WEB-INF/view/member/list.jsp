@@ -8,8 +8,11 @@
 <meta charset="UTF-8">
 <title>회원 목록 조회</title>
 </head>
+<style>
+</style>
 <body>
 <%@ include file="header.jsp"%>
+<section>
 <h2>회원 목록 조회</h2>
 
 	<table border="1">
@@ -42,6 +45,7 @@
 		}
 		%>
 	</table>
-
+	</section>
+<%@ include file="footer.jsp"%>
 </body>
 </html>
