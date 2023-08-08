@@ -9,7 +9,8 @@ public class MemberDto {
 //	ADDRESS           VARCHAR2(60) 
 //	JOINDATE          DATE         
 //	GRADE             CHAR(1)      
-//	CITY              CHAR(2)      
+//	CITY              CHAR(2) 
+	private int price;
 	private int custno;
 	private String custname;
 	private String phone;
@@ -24,6 +25,20 @@ public class MemberDto {
 		this.grade = grade;
 		this.city = city;
 	}
+	
+
+	public MemberDto() {
+	}
+
+	
+	public MemberDto(int price, int custno, String custname, String grade) {
+		this.price = price;
+		this.custno = custno;
+		this.custname = custname;
+		this.grade = grade;
+	}
+
+
 	public MemberDto(String custname, String phone, String address, String grade, String city) {
 		this.custname = custname;
 		this.phone = phone;
@@ -31,16 +46,24 @@ public class MemberDto {
 		this.grade = grade;
 		this.city = city;
 	}
-	public MemberDto() {
-	}
+	
 	@Override
 	public String toString() {
-		return "MemberDto [custno=" + custno + ", custname=" + custname + ", phone=" + phone + ", address=" + address
-				+ ", grade=" + grade + ", city=" + city + "]";
+		return "MemberDto [price=" + price + ", custno=" + custno + ", custname=" + custname + ", phone=" + phone
+				+ ", address=" + address + ", grade=" + grade + ", city=" + city + "]";
 	}
+
 	public int getCustno() {
 		return custno;
 	}
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	public void setCustno(int custno) {
 		this.custno = custno;
 	}
