@@ -31,7 +31,19 @@ public class SemiService {
 		
 		return result;
 	}
-	
-	
+	public MemberDto selectOne(int custNo) {
+		MemberDto result = null;
+		Connection conn = getConnection();
+		result = dao.selectOne(conn, custNo);
+		close(conn);
+		return result;
+	}
+	public int update(MemberDto dto){
+		int result = -1;
+		Connection conn = getConnection();
+		result = dao.update(conn, dto);
+		close(conn);
+		return result;
+	}
 	
 }

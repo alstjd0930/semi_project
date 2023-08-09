@@ -4,18 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/resource/css/style.css">
 <title>홈쇼핑 회원 등록</title>
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<%@ include file="section.jsp"%>
 <section>
 <h2>홈쇼핑 회원 등록</h2>
-	<!-- private int custno;
-	private String custname;
-	private String phone;
-	private String address;
-	private String grade;
-	private String city; -->
+
 	<form action="<%=request.getContextPath() %>/member/insert" method="post">
 	<table border="1">
 		<tr>
@@ -48,7 +45,7 @@
 	
 	</table>
 	</form>
-	</section>
+</section>
 <%@ include file="footer.jsp"%>
 </body>
 </html>

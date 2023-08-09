@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import semi.project.common.JdbcTemplate;
 import semi.project.model.dto.MemberDto;
 
 import static semi.project.common.JdbcTemplate.*;
@@ -200,5 +201,64 @@ public class MemberDao {
 //		System.out.println("[Dept Dao selectOne] return:"+result);
 //		return result;
 //	}
-	
+	public MemberDto selectOne(Connection conn, int custNo) {
+		MemberDto result = null;
+		String query = "select custno, custname, phone, address, grade, city from member_tbl_02 where custno= ?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+//		private int price;
+//		private int custno;
+//		private String custname;
+//		private String phone;
+//		private String address;
+//		private String grade;
+//		private String city;
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, custNo);
+			rs = pstmt.executeQuery();	
+		if(rs.next()) {
+			result = new MemberDto(rs.getInt("custno"), rs.getString("custname"), rs.getString("phone"), rs.getString("address"),
+					 rs.getString("grade"), rs.getString("city"));
+		}
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JdbcTemplate.close(rs);
+			JdbcTemplate.close(pstmt);
+		}
+	return result;
+	}
+	public int update(Connection conn, MemberDto dto) {
+		int result = 0;  
+		String query = "update member_tbl_02 set custname=?, phone=?,address=?,"
+				+ "grade=?, city=? where custno=?"; 
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			
+			pstmt.setString(1, dto.getCustname());
+			pstmt.setString(2, dto.getPhone());
+			pstmt.setString(3, dto.getAddress());
+			pstmt.setString(4, dto.getGrade());
+			pstmt.setString(5, dto.getCity());
+			pstmt.setInt(6, dto.getCustno());
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+	    } finally {
+	        try {
+	            if (pstmt != null) {
+	                pstmt.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace(); 
+	        }
+	    }
+		System.out.println("update"+result);
+	    return result;
+	}
 }

@@ -7,17 +7,15 @@
 <title>Insert title here</title>
 </head>
 <style>
-footer{
+section{
 	margin: 0;
     padding: 0;
-	background-color: rgb(142, 142, 247);
-	color: white;
-	
+	background-color: rgb(206, 205, 205);	
 }
 </style>
 <body>
-<footer>
-	<h2>푸터영역</h2>
-</footer>
+	<section>
+	
+	</section>
 </body>
 </html>

@@ -12,8 +12,10 @@ boby{
     padding: 0;
 }
 nav{
+	margin: 0;
+    padding: 0;
 	width: 100%;
-	background-color: red;
+	background-color: rgb(142, 142, 247);
 	
 }
 .h_tag{	

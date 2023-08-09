@@ -34,7 +34,7 @@
 		
 		%>
 		<tr>
-			<td><a href="<%=request.getContextPath() %>/member/modify?custNo=<%=volist.get(i).getCustno()%>"> <%=volist.get(i).getCustno()%></a></td>
+			<td><a href="<%=request.getContextPath() %>/member/modify?custno=<%=volist.get(i).getCustno()%>"> <%=volist.get(i).getCustno()%> </a></td>
 			<td><%=volist.get(i).getCustname()%></td>
 			<td><%=volist.get(i).getPhone() %></td>
 			<td><%=volist.get(i).getAddress() %></td>

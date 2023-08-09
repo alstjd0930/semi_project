@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import semi.project.model.dao.SemiService;
+import semi.project.model.dto.MemberDto;
+
 @WebServlet("/member/modify")
 public class MemberModifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -17,9 +20,17 @@ public class MemberModifyServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String custNo=request.getParameter("custNo");
-		request.setAttribute(custNo, custNo);
+		String custNoStr = request.getParameter("custno");
+		int custno = 0;
+		try {
+			custno = Integer.parseInt(custNoStr);
+		} catch (NumberFormatException e) {
+		}
 		
+		
+		SemiService memberService = new SemiService();
+        MemberDto mvo = memberService.selectOne(custno);
+        request.setAttribute("mvo", mvo);
 		request.getRequestDispatcher("/WEB-INF/view/member/modify.jsp").forward(request, response);
 	}
 
