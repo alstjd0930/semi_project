@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import semi.project.DAO.MemberDao;
-import semi.project.DTO.MemberDto;
+import semi.project.model.dao.MemberDao;
+import semi.project.model.dto.MemberDto;
 
 
 @WebServlet("/member/salary")

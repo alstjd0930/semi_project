@@ -1,4 +1,4 @@
-package semi.project.Member.controller;
+package semi.project.aember.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import semi.project.DAO.MemberDao;
-import semi.project.DAO.SemiService;
-import semi.project.DTO.MemberDto;
+import semi.project.model.dao.MemberDao;
+import semi.project.model.dao.SemiService;
+import semi.project.model.dto.MemberDto;
 
 /**
  * Servlet implementation class MemberInsertServlet

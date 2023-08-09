@@ -1,4 +1,4 @@
-package semi.project.DTO;
+package semi.project.model.dto;
 
 import java.sql.Date;
 
@@ -17,6 +17,7 @@ public class MemberDto {
 	private String address;
 	private String grade;
 	private String city;
+	
 	public MemberDto(int custno, String custname, String phone, String address, String grade, String city) {
 		this.custno = custno;
 		this.custname = custname;

@@ -1,4 +1,4 @@
-package semi.project.DAO;
+package semi.project.model.dao;
 
 
 import static semi.project.common.JdbcTemplate.*;
@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-import semi.project.DTO.MemberDto;
+import semi.project.model.dto.MemberDto;
 
 
  

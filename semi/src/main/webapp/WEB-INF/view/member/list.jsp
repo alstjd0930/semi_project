@@ -1,4 +1,4 @@
-<%@page import="semi.project.DTO.MemberDto"%>
+<%@page import="semi.project.model.dto.MemberDto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -12,6 +12,7 @@
 </style>
 <body>
 <%@ include file="header.jsp"%>
+<%@ include file="section.jsp"%>
 <section>
 <h2>회원 목록 조회</h2>
 
@@ -33,7 +34,7 @@
 		
 		%>
 		<tr>
-			<td><a href="<%=request.getContextPath() %>/member/modify"> <%=volist.get(i).getCustno()%></a></td>
+			<td><a href="<%=request.getContextPath() %>/member/modify?custNo=<%=volist.get(i).getCustno()%>"> <%=volist.get(i).getCustno()%></a></td>
 			<td><%=volist.get(i).getCustname()%></td>
 			<td><%=volist.get(i).getPhone() %></td>
 			<td><%=volist.get(i).getAddress() %></td>

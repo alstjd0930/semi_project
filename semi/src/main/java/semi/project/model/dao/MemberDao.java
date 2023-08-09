@@ -1,4 +1,4 @@
-package semi.project.DAO;
+package semi.project.model.dao;
  
 import java.sql.Connection;
 import java.sql.Date;
@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static semi.project.common.JdbcTemplate.*;
+import semi.project.model.dto.MemberDto;
 
-import semi.project.DTO.MemberDto;
+import static semi.project.common.JdbcTemplate.*;
 
 public class MemberDao {
 	public int insert(Connection conn, MemberDto dto){
