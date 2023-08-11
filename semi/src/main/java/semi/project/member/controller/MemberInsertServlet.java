@@ -1,6 +1,8 @@
 package semi.project.member.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,12 +32,16 @@ public class MemberInsertServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		MemberDao dao = new MemberDao();
+		SemiService service = new SemiService();
+		int result=service.nextCustno();
+		request.setAttribute("custno", result);		
 		System.out.println("insertGet");
 		request.getRequestDispatcher("/WEB-INF/view/member/insert.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("insertPost");
+
 		SemiService service = new SemiService();
 		//MemberDao dao = new MemberDao();
 		request.setCharacterEncoding("UTF-8");
@@ -54,7 +60,7 @@ public class MemberInsertServlet extends HttpServlet {
 		dto.setGrade(grade);
 		dto.setCity(city);
 		
-		int result = service.insert(new MemberDto( custname, phone, address, grade, city));
+		int result = service.insert(new MemberDto(custname, phone, address, grade, city));
 		
 		//System.out.println("[insert servlet] "+dto);
 

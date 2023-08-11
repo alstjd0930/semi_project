@@ -39,11 +39,17 @@ public class SemiService {
 		return result;
 	}
 	public int update(MemberDto dto){
-		int result = -1;
+		int result = 0;
 		Connection conn = getConnection();
 		result = dao.update(conn, dto);
 		close(conn);
 		return result;
 	}
-	
+	public int nextCustno(){
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.nextCustno(conn);
+		close(conn);
+		return result;
+	}
 }

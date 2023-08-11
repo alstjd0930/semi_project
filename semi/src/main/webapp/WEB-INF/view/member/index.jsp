@@ -12,6 +12,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<%@ include file="nav.jsp"%>
 <%@ include file="section.jsp"%>
 <section>
 	<h1>메인</h1>

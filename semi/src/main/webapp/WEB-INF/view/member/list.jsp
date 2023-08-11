@@ -12,6 +12,7 @@
 </style>
 <body>
 <%@ include file="header.jsp"%>
+<%@ include file="nav.jsp"%>
 <%@ include file="section.jsp"%>
 <section>
 <h2>회원 목록 조회</h2>

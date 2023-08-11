@@ -11,6 +11,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<%@ include file="nav.jsp"%>
 <%@ include file="section.jsp"%>
 <section>
 	<h2>회원매출조회</h2>

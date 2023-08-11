@@ -10,6 +10,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<%@ include file="nav.jsp"%>
 <%@ include file="section.jsp"%>
 
 <section>
@@ -19,7 +20,7 @@
 	<table border="1">
 		<tr>
 			<td>회원번호</td>
-			<td><input type="text" readonly="readonly" value="${mvo.custno}"></td>
+			<td><input type="text" readonly="readonly" name="custno" value="${mvo.custno}"></td>
 		</tr>
 		<tr>
 			<td>회원성명</td>
@@ -43,8 +44,7 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-			<button type="submit">수정</button>
-			<button type="button">조회</button>
+			<button type="botton">수정</button> <button type="submit">조회</button>
 			</td>
 		</form>
 		</tr>
@@ -55,5 +55,6 @@
 	<%@ include file="footer.jsp"%>
 </body>
 <script>
+
 </script>
 </html>

@@ -27,6 +27,8 @@ public class MemberDto {
 		this.city = city;
 	}
 	
+	
+
 
 	public MemberDto() {
 	}

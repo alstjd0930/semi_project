@@ -40,36 +40,29 @@ public class MemberModifyDoServlet extends HttpServlet {
 		int custno = 0;
 		try {
 			custno = Integer.parseInt(custNoStr);
-		} catch (NumberFormatException e) {
-		}
+			} catch (NumberFormatException e) {
+		
+			}
 		String custname = request.getParameter("custname");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
 		String grade = request.getParameter("grade");
 		String city = request.getParameter("city");
+		
 		System.out.println(custname);
 		System.out.println(address);
 		MemberDto dto = new MemberDto();
 	
+		dto.setCustno(custno);
 		dto.setCustname(custname);
 		dto.setPhone(phone);
 		dto.setAddress(address);
 		dto.setGrade(grade);
 		dto.setCity(city);
 		
-		System.out.println(dto);
 		int result = service.update(dto);
 		
-		
 		response.sendRedirect(request.getContextPath()+"/member/list");
-		System.out.println(result);
-//		if(result > 0) {
-			// success
-			
-//		} else {
-//			response.sendRedirect(request.getContextPath()+"/member/modify?custno"+custNoStr);
-//		}
-//		}
 
 	
 	}

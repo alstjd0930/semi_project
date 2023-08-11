@@ -14,6 +14,26 @@ import semi.project.model.dto.MemberDto;
 import static semi.project.common.JdbcTemplate.*;
 
 public class MemberDao {
+	public int nextCustno(Connection conn) {
+		int result = 0;
+		String query = "SELECT max(custno)+1 custno FROM member_tbl_02";
+		PreparedStatement pstmt =null; 
+		ResultSet rs =null;
+		try {
+			pstmt=conn.prepareStatement(query);
+			rs =pstmt.executeQuery();
+			MemberDto dto = new MemberDto();
+			//result = dto.setCustno(rs.getInt("custno"));
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			close(conn);
+		}
+		System.out.println("nextCustno"+result);
+		return result;
+		
+	}
 	public int insert(Connection conn, MemberDto dto){
 		int result = 0;
 		String query = "INSERT INTO member_tbl_02 VALUES(member_seq.nextval,?,?,?,?,?)";
@@ -232,9 +252,9 @@ public class MemberDao {
 	return result;
 	}
 	public int update(Connection conn, MemberDto dto) {
+		System.out.println("update dto "+dto);
 		int result = 0;  
-		String query = "update member_tbl_02 set custname=?, phone=?,address=?,"
-				+ "grade=?, city=? where custno=?"; 
+		String query = "update member_tbl_02 set custname=?, phone=?,address=?, grade=?, city=? where custno=?"; 
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(query);
@@ -258,7 +278,8 @@ public class MemberDao {
 	            e.printStackTrace(); 
 	        }
 	    }
-		System.out.println("update"+result);
+		
+		System.out.println("update result"+result);
 	    return result;
 	}
 }
