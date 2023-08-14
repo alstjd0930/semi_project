@@ -36,12 +36,48 @@
 		</tr>
 		<tr>
 			<td>고객등급</td>
-			<td><input type="text" name="grade" value="${mvo.grade}"> </td>
+			<td><%-- <input type="text" name="grade" value="${mvo.grade}"> --%> 
+				<select name="grade">
+					<option>S</option>
+					<option>A</option>
+					<option>B</option>
+					<option>C</option>
+				</select>		
+			</td>
 		</tr>
 		<tr>
 			<td>도서코드</td>
-			<td><input type="text" name="city" value="${mvo.city}"> </td>
+			<td><%-- <input type="text" name="city" value="${mvo.city}"> --%>
+				<select name="city">
+					<option>01</option>
+					<option>30</option>
+					<option>40</option>
+					<option>60</option>
+				</select>	
+			</td>
 		</tr>
+		<!-- <tr>
+			<td>고객등급</td>
+			<td><input type="text" name="grade">
+				<select name="grade">
+					<option>S</option>
+					<option>A</option>
+					<option>B</option>
+					<option>C</option>
+				</select>			
+			 </td>
+		</tr>
+		<tr>
+			<td>도서코드</td>
+			<td><input type="text" name="city">
+				<select name="city">
+					<option>01</option>
+					<option>30</option>
+					<option>40</option>
+					<option>60</option>
+				</select>	
+			</td>
+		</tr> -->
 		<tr>
 			<td colspan="2">
 			<button type="botton">수정</button> <button type="submit">조회</button>

@@ -39,7 +39,20 @@
 			<td><%=volist.get(i).getCustname()%></td>
 			<td><%=volist.get(i).getPhone() %></td>
 			<td><%=volist.get(i).getAddress() %></td>
-			<td><%=volist.get(i).getGrade() %></td>
+			<td><%-- <%=volist.get(i).getGrade() %> --%>
+			<% 
+		        String grade = volist.get(i).getGrade();
+		        if ("A".equals(grade)) {
+		            out.print("VIP");
+		        } else if ("B".equals(grade)) {
+		            out.print("일반");
+		        } else if ("C".equals(grade)) {
+		            out.print("직원");
+				} else if ("S".equals(grade)) {
+		            out.print("admin");
+		        }
+       		 %>
+			</td>
 			<td><%=volist.get(i).getCity() %></td>
 		</tr>
 		<%

@@ -27,7 +27,7 @@
 	<table border="1">
 		<tr>
 			<td>회원번호</td>
-			<td><input type="custno" readonly="readonly" value="custno" > </td>
+			<td><input type="custno" readonly="readonly" > </td>
 		</tr>
 		<tr>
 			<td>회원성명</td>
