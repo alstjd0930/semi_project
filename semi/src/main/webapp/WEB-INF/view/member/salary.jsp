@@ -9,12 +9,12 @@
 <meta charset="UTF-8">
 <title>회원매출조회</title>
 </head>
-<body>
+<body style="margin: 0px; padding: 0px;">
 <%@ include file="header.jsp"%>
-<%@ include file="nav.jsp"%>
+
 <%@ include file="section.jsp"%>
 <section>
-	<h2>회원매출조회</h2>
+	<h2 style="text-align: center; padding-top: 40px; margin: 0px; ">회원매출조회</h2>
 	
 	<table border="1">
 		<tr>

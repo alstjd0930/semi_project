@@ -7,15 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 목록 조회</title>
+<%-- <%@include file="/WEB-INF/view/member/style.css" %> --%>
 </head>
 <style>
 </style>
-<body>
+<body style="margin: 0px; padding: 0px;">
 <%@ include file="header.jsp"%>
-<%@ include file="nav.jsp"%>
+
 <%@ include file="section.jsp"%>
 <section>
-<h2>회원 목록 조회</h2>
+<h2 style="text-align: center; padding-top: 40px; margin: 0px; ">회원 목록 조회</h2>
 
 	<table border="1">
 		<tr>
@@ -54,6 +55,7 @@
        		 %>
 			</td>
 			<td><%=volist.get(i).getCity() %></td>
+			<td><input type="button" value="삭제" onclick="deleteMember('<%=volist.get(i).getCustno()%>')"></td>
 		</tr>
 		<%
 		}
@@ -62,5 +64,12 @@
 	</table>
 	</section>
 <%@ include file="footer.jsp"%>
+<script>
+function deleteMember(custno) {
+    if (confirm('정말로 삭제하시겠습니까?')) {
+
+    }
+}
+</script>
 </body>
 </html>
