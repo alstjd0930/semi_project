@@ -13,7 +13,8 @@ h2{
 section{
 	margin: 0;
     padding: 0;
-	background-color: rgb(206, 205, 205);
+	/* background-color: rgb(206, 205, 205); */
+	background-color:white;
 	height: 790px;	
 }
 table {

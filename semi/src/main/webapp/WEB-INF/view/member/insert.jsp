@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <!-- <link rel="stylesheet" href="/resource/css/style"> -->
 <title>홈쇼핑 회원 등록</title>
+<script>
+
+</script>
 <style>
 	select {
 		width: 250px;
@@ -53,7 +56,7 @@
 			 </td>
 		</tr>
 		<tr>
-			<td style="font-weight: bold;">도서코드</td>
+			<td style="font-weight: bold;">도시코드</td>
 			<td><!-- <input type="text" name="city"> -->
 				<select name="city">
 					<option>01</option>

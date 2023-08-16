@@ -25,7 +25,7 @@
 			<th>전화번호</th>
 			<th>주소</th>
 			<th>고객등급</th>
-			<th>거주지역</th>
+			<th>도시코드</th>
 		</tr>
 		<%
 	
@@ -36,7 +36,7 @@
 		
 		%>
 		<tr>
-			<td><a href="<%=request.getContextPath() %>/member/modify?custno=<%=volist.get(i).getCustno()%>"> <%=volist.get(i).getCustno()%> </a></td>
+			<td><a  style="color: blue;" href="<%=request.getContextPath() %>/member/modify?custno=<%=volist.get(i).getCustno()%>"> <%=volist.get(i).getCustno()%> </a></td>
 			<td><%=volist.get(i).getCustname()%></td>
 			<td><%=volist.get(i).getPhone() %></td>
 			<td><%=volist.get(i).getAddress() %></td>
